@@ -63,12 +63,9 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     </div>
     <div class="alert alert-success alert-dismissible fade show">
-        {{ message }}
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     </div>
     <div class="container-fluid">
-        {% block content %}
-        {% endblock %}
     </div>
 
     <div class="container-fluid col-sm-8">
@@ -160,13 +157,9 @@
                     </div>
                 </div>
 
-                {% if error_message %}
                 <div class="alert alert-danger mt-3" role="alert">
-                    {{ error_message }}
                 </div>
-                {% endif %}
-
-                {% if alerts %}
+                
                 <div class="mt-3">
                     <p class="mb-2">Cybersecurity analysis for {{ scan_url }}:</p>
                     <table class="table">
@@ -178,36 +171,32 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% for alert, data in alerts.items() %}
                             <tr>
                                 <td>{{ alert }}</td>
                                 <td>{{ data['risk'] }}</td>
                                 <td>{{ data['solution'] }}</td>
                             </tr>
-                            {% endfor %}
                         </tbody>
                     </table>
                 </div>
-                {% endif %}
-
+                
             </div>
             <div class="container-fluid mt-3 mx-auto">
                 <h3 class="text-center">DEVELOPERS</h3>
                 <div class="container-fluid row">
                     <div class="col-sm p-3 m-2">
-                        <img src="{{ url_for('static', filename='images/Nebiyu.jpg') }}"
+                        <img src="/webflask/static/images/Nebiyu.jpg"
                             class="rounded img-fluid mx-auto d-block hover-zoom" alt="Nebiyu" style="width:300px;">
 
                     </div>
                     <div class="col-sm p-3 m-2">
-                        <img src="{{ url_for('static', filename='images/Pizzosta.jpg') }}"
+                        <img src="/webflask/static/images/Pizzosta.jpg"
                             class="rounded img-fluid mx-auto d-block hover-zoom" alt="Pizzosta" style="width:300px;">
 
                     </div>
                 </div>
             </div>
         </div>
-        {% endif %}
     </div>
 
     <div class="position-fixed bottom-0 end-0 m-3 hover-zoom">
@@ -221,7 +210,7 @@
         <div class="mt-3">
             <a href="https://github.com/blackhammer116/Project-Artimus" data-bs-toggle="tooltip" data-bs-placement="top"
                 title="Github">
-                <img src="{{ url_for('static', filename='images/github.png') }}" alt="Github"
+                <img src="/webflask/static/images/github.png" alt="Github"
                     style="width: 20px; height:20px;">
             </a>
 
@@ -230,9 +219,7 @@
             | PROJECT ARTIMUS &#174; All rights reserved. Cookie policy, Privacy and Terms</p>
 
     </footer>
-    {% block javascript %}
     <script src="{{ url_for('static', filename='scripts/index.js') }}"></script>
-    {% endblock %}
 </body>
 
 </html>
