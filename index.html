@@ -45,7 +45,6 @@
                 <li class="nav-item">
                     <a class="nav-link text-black hover-blue" href="/logout">Logout</a>
                 </li>
-                {% else %}
                 <li class="nav-item">
                     <a class="nav-link text-black hover-blue" href="/sign-up">Signup</a>
                 </li>
@@ -55,32 +54,23 @@
                 <li class="nav-item">
                     <a class="nav-link text-black hover-blue" href="#">About Us</a>
                 </li>
-                {% endif%}
             </ul>
 
         </div>
     </nav>
     
     <div class="alert alert-danger alert-dismissible fade show">
-        {{ message }}
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     </div>
-    {% else %}
     <div class="alert alert-success alert-dismissible fade show">
         {{ message }}
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     </div>
-    {% endif %}
-    {% endfor %}
-    {% endif %}
-    {% endwith %}
-
     <div class="container-fluid">
         {% block content %}
         {% endblock %}
     </div>
 
-    {% if show_div %}
     <div class="container-fluid col-sm-8">
         <div class="container-fluid mt-3 mx-auto">
             <h3 class="text-center">OVERVIEW</h3>
