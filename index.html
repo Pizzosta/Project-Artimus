@@ -31,13 +31,6 @@
                 <img src="./webflask/static/images/projectartimuslogo.png" alt="Project-Artimus Logo"
                     style="width:40px;">
             </a>
-            <form class="d-flex col-sm-5" method="POST" action="{{ url_for('views.search') }}">
-                <div class="input-group">
-                    <input type="text" class="form-control me-1" placeholder="Enter your search query"
-                        name="search_query" required>
-                    <button class="btn btn-primary" type="submit">Search</button>
-                </div>
-            </form>
             <ul class="nav">
                 <li class="nav-item">
                     <a class="nav-link text-black hover-blue" href="/home">Home</a>
@@ -58,7 +51,11 @@
 
         </div>
     </nav>
-  
+  <div class="container-fluid col-sm-8">
+        <div class="container-fluid mt-3 mx-auto">
+            <h3 class="text-center">LANDING PAGE</h3>
+            <p> For full functionality visit the main page  <a class="nav-link text-black hover-blue" href="https://www.zosta.tech/">ZOSTA TECH</a> </p>
+        </div>
     <div class="container-fluid col-sm-8">
         <div class="container-fluid mt-3 mx-auto">
             <h3 class="text-center">OVERVIEW</h3>
